@@ -17,7 +17,7 @@ A robust, modern WordPress plugin to import links into the Link Manager from a t
 
 Gemini Link Importer provides a user-friendly admin interface to quickly import multiple links into the WordPress Link Manager. Users can paste links in a `URL, Title, Category` format, one link per line.
 
-This plugin is built with a modern development workflow, including a Gulp build process for assets, PHPUnit for testing, and full internationalization support.
+This plugin is built with a modern development workflow, leveraging pure Node.js scripts for asset compilation and internationalization, along with PHPUnit for testing.
 
 **Key Features:**
 
@@ -75,30 +75,45 @@ The plugin checks for duplicate links based on the URL **within the specified ca
 
 = 1.0.0 =
 *   Initial release.
+*   Feature: Import links via textarea with `URL, Title, Category` format.
+*   Feature: AJAX-powered import with detailed feedback and counts.
+*   Feature: Automatic category creation.
+*   Feature: Duplicate link checking (URL + Category specific).
+*   Feature: Support for optionally quoted fields.
+*   Feature: Robust Link Manager activation check (works with plugins and theme filters).
+*   Feature: Full internationalization support with a `languages` directory and source `.po` file.
+*   Feature: Modern development workflow leveraging pure Node.js scripts for asset compilation and language file generation.
+*   Feature: Includes a full PHPUnit test suite for core functionality.
+
+== Upgrade Notice ==
+
+= 1.0.0 =
+Initial release of the plugin.
 
 == Developer Documentation ==
 
-This plugin is built with a modern, testable, and maintainable workflow.
+This plugin is built with a modern, testable, and maintainable workflow leveraging pure Node.js scripts.
 
 **Development Stack:**
 *   **PHP Linting:** PHPCS with the `WordPress` ruleset.
 *   **Unit Testing:** PHPUnit with the WordPress test suite.
-*   **Build System:** Gulp.js.
-*   **CSS Pre-processing:** Sass (SCSS).
+*   **Build System:** Pure Node.js scripts (no Gulp/Webpack).
+*   **CSS Pre-processing:** Sass (directly via `sass` Node.js package).
 *   **JS Linting:** JSHint.
-*   **JS/CSS Minification:** `gulp-uglify` / `gulp-clean-css`.
-*   **Language File Generation:** `gulp-wp-pot` for `.po` source file generation and a custom task using `gettext-parser` for `.mo` compilation.
+*   **JS Minification:** `terser`.
+*   **CSS Post-processing/Minification:** `postcss` with `autoprefixer` and `cssnano`.
+*   **File Watching:** `chokidar`.
+*   **Language File Generation:** `gettext-extractor` (for `.po` source generation) and `gettext-parser` (for `.mo` compilation).
 
 **Initial Setup:**
 1.  Clone the repository.
-2.  Install the Gulp Command Line Interface globally if you haven't already: `npm install -g gulp-cli`.
-3.  Run `npm install` to install Node.js dependencies.
-4.  Run `composer install` to install PHP dependencies (PHPUnit, PHPCS).
-5.  Set up the WordPress test environment: `composer run-script install-wp-tests`.
+2.  Run `npm install` to install Node.js dependencies.
+3.  Run `composer install` to install PHP dependencies (PHPUnit, PHPCS).
+4.  Set up the WordPress test environment: `composer run-script install-wp-tests`.
 
 **Build Commands:**
-*   `gulp` or `gulp build`: Compiles all assets (CSS, JS) and language files. This is the main command for creating a distributable version.
-*   `gulp watch`: Watches for changes in SCSS, JS, and PHP files to automatically recompile assets and update language files.
+*   `npm run build`: Compiles all assets (CSS, JS) and generates/compiles language files.
+*   `npm run start` or `npm run watch`: Watches for changes in SCSS, JS, and PHP files to automatically recompile assets and update language files.
 
 **Linting & Testing:**
 *   `composer lint` (or `vendor/bin/phpcs`): Lints PHP files.

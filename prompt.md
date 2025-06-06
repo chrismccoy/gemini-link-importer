@@ -62,15 +62,12 @@ Develop a WordPress plugin named "Gemini Link Importer" in an OOP style, includi
 
 **V. Development Workflow & Tooling:**
 
-1.  **`package.json`:** Create a `package.json` file to manage Node.js dependencies for the build process. Include `gulp`, `gulp-sass` (pinned to version `5.1.0`), `sass` (pinned to version `1.62.1`), `gulp-clean-css`, `gulp-uglify`, `gulp-rename`, `gulp-wp-pot`, `gettext-parser`, and `through2`. Include npm scripts for `build`, `watch`, `makepot`, `compilemo`, and `uglify`.
-2.  **Gulp:**
-    *   Create a `gulpfile.js`.
-    *   Configure Gulp to compile `assets/scss/admin.scss` to `assets/css/admin.css` and `assets/css/admin.min.css` (using `gulp-sass` and `gulp-clean-css`).
-    *   Configure Gulp to minify `assets/js/admin.js` to `assets/js/admin.min.js` (using `gulp-uglify`).
-    *   Configure `gulp-wp-pot` for a `makepot` task to generate a source language file with a `.po` extension (e.g., `gemini-link-importer.po`) in the `languages` directory by scanning PHP files.
-    *   Create a custom asynchronous Gulp task named `po2mo` that uses the `gettext-parser` library with a dynamic `import()` to compile all `.po` files in the `languages` directory to `.mo` files. This must not have an external dependency on the `gettext` command-line tool. The logging for this task must correctly report the source `.po` file and destination `.mo` file.
-    *   Configure a `watch` task to automatically recompile SCSS, JS, PO, and regenerate the source language file on changes.
-    *   The default `gulp` or `gulp build` task should run all compilation and generation tasks in sequence.
+1.  **`package.json`:** Create a `package.json` file to manage Node.js dependencies. Include `autoprefixer`, `chokidar`, `cssnano`, `gettext-parser`, `gettext-extractor` (for .po generation), `glob`, `gulp-wp-pot`, `postcss`, `sass` (pinned to `1.62.1`), `terser`, and `through2`. Include npm scripts for `build`, `start`, `watch`, `lint:php`, `test`, and `languages` (which orchestrates `make-pot` and `compile-mo`).
+2.  **Pure Node.js Build Scripts:**
+    *   Create `scripts/build.js` for main JS/CSS compilation (Sass to CSS, PostCSS for autoprefixing/cssnano, Terser for JS minification).
+    *   Create `scripts/watch.js` for file watching (`chokidar`) and triggering build tasks.
+    *   Create `scripts/make-pot.js` to generate the `.po` language file (using `gulp-wp-pot` directly via a Node.js stream). This script must correctly handle the `gulp-wp-pot` API for generating the `.po` file from PHP sources and writing it to the specified path.
+    *   Create `scripts/compile-mo.js` to compile `.po` files to `.mo` (using `gettext-parser`). This script must correctly use `gettext-parser` as an ES Module via `await import()`.
 3.  **`.gitignore`:** Create a `.gitignore` file to exclude `node_modules/`, OS-generated files, IDE files, and other common non-versioned items. The compiled assets (`admin.min.css`, `admin.min.js`) and language files (`.po`, `.mo`) should *not* be ignored if they are to be distributed with the plugin.
 4.  **PHPCS:**
     *   Create a `phpcs.xml` (or `phpcs.xml.dist`) configuration file.
@@ -102,7 +99,7 @@ Develop a WordPress plugin named "Gemini Link Importer" in an OOP style, includi
 
 1.  **`readme.txt`:** Create a WordPress-standard `readme.txt` file for the plugin, including:
     *   Header block with plugin metadata (contributors, tags, requires, tested up to, stable tag, license, text domain, domain path).
-    *   Description, Installation instructions, FAQ, Screenshots (descriptions), Changelog, and a detailed Developer Documentation section explaining the Gulp build process.
+    *   Description, Installation instructions, FAQ, Screenshots (descriptions), Changelog, and a detailed Developer Documentation section explaining the pure Node.js build process.
     *   Ensure it's formatted correctly for the WordPress.org plugin repository.
 
 **VII. Sample Data Generation (for testing):**
