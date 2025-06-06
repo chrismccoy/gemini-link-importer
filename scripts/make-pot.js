@@ -11,7 +11,7 @@ const potFile = path.join(languagesDir, 'gemini-link-importer.po');
 const textDomain = 'gemini-link-importer';
 
 async function generatePotFile() {
-  console.log('--- Starting .po Generation Process (Pure Node.js) ---');
+  console.log('--- Starting .po Generation Process ---');
 
   if (!fs.existsSync(languagesDir)) {
     fs.mkdirSync(languagesDir, { recursive: true });
