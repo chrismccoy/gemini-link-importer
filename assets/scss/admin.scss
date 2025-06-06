@@ -1,0 +1,59 @@
+// Gemini Link Importer Admin Styles
+
+// Textarea styling
+#gemini-link-importer-textarea {
+  width: 100%;
+  max-width: 800px;
+}
+
+// Spinner styling for the button
+.gemini-button-with-spinner {
+  .spinner {
+    float: none;
+    margin: 0 5px 0 0;
+    vertical-align: middle;
+    visibility: hidden;
+  }
+
+  &.is-loading .spinner {
+    visibility: visible;
+  }
+}
+
+// Admin notice styling
+.gemini-link-importer-notice {
+  margin: 10px 0 20px;
+  padding: 12px;
+  border-left-width: 4px;
+  border-left-style: solid;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+  border-left-color: #007cba; // Default info
+
+  &.notice-success {
+    border-left-color: #46b450;
+  }
+
+  &.notice-error {
+    border-left-color: #dc3232;
+  }
+
+  &.notice-warning {
+    border-left-color: #ffb800;
+  }
+
+  h3 {
+    margin: 0 0 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+
+  ul {
+    margin: 0 0 0 20px;
+    list-style-type: disc;
+
+    li {
+      margin-bottom: 5px;
+    }
+  }
+}

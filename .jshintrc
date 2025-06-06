@@ -1,0 +1,24 @@
+{
+  "browser": true,
+  "jquery": true,
+  "esversion": 5,
+  "strict": "global",
+  "undef": true,
+  "unused": "vars",
+  "latedef": "nofunc",
+  "devel": true,
+  "eqnull": true,
+  "expr": true,
+  "loopfunc": true,
+  "curly": true,
+  "eqeqeq": true,
+  "immed": true,
+  "newcap": true,
+  "noarg": true,
+  "sub": true,
+  "trailing": true,
+  "quotmark": "single",
+  "globals": {
+    "geminiLinkImporterAjax": "readonly"
+  }
+}

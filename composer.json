@@ -1,0 +1,39 @@
+{
+    "name": "chrismccoy/gemini-link-importer",
+    "description": "A WordPress plugin to import links into the Link Manager from a textarea.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Google",
+            "email": "hi@google.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "yoast/wp-test-utils": "^1.2",
+        "wp-coding-standards/wpcs": "^2.3",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+        "phpcompatibility/phpcompatibility-wp": "^2.1"
+    },
+    "scripts": {
+        "install-wp-tests": [
+            "bash bin/install-wp-tests.sh gemini_link_importer_tests root '' localhost latest"
+        ],
+        "test": [
+            "phpunit"
+        ],
+        "lint": [
+            "phpcs"
+        ],
+        "format": [
+            "phpcbf"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}

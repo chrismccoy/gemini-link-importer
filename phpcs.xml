@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<ruleset name="GeminiLinkImporter Coding Standards">
+    <description>PHP Coding Standards for the Gemini Link Importer plugin.</description>
+
+    <!-- Scan only PHP files. -->
+    <arg name="extensions" value="php"/>
+    <!-- Show colors in console output. -->
+    <arg name="colors"/>
+    <!-- Show progress of the run. -->
+    <arg value="p"/>
+    <!-- Use a cache file. -->
+    <arg name="cache" value=".phpcs.cache"/>
+    <!-- Check up to 8 files simultaneously. -->
+    <arg name="parallel" value="8"/>
+
+    <!-- Set a default text domain for WordPress internationalization functions. -->
+    <config name="text_domain" value="gemini-link-importer"/>
+    <!-- Set a minimum PHP version. -->
+    <config name="minimum_php_version" value="7.4"/>
+
+    <!-- Check all files in the plugin directory. -->
+    <file>.</file>
+
+    <!-- Exclude paths -->
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/assets/css/*</exclude-pattern>
+    <exclude-pattern>*/assets/js/*</exclude-pattern>
+
+    <!-- Include the WordPress ruleset -->
+    <rule ref="WordPress"/>
+
+    <!-- Configure the text domain for WordPress internationalization functions. -->
+    <rule ref="WordPress.WP.I18n">
+        <properties>
+            <property name="text_domain" type="array">
+                <element value="gemini-link-importer"/>
+            </property>
+        </properties>
+    </rule>
+
+    <!-- Configure prefixes for global functions, classes, constants etc. -->
+    <rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+        <properties>
+            <property name="prefixes" type="array">
+                <element value="gemini"/>
+            </property>
+        </properties>
+    </rule>
+</ruleset>

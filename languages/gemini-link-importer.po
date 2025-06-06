@@ -1,0 +1,129 @@
+# Copyright (C) 2025 gemini-link-importer
+# This file is distributed under the same license as the gemini-link-importer package.
+msgid ""
+msgstr ""
+"Project-Id-Version: gemini-link-importer\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_US\n"
+"Language-Team: English <your.email@example.com>\n"
+"Last-Translator: Your Name <your.email@example.com>\n"
+"POT-Creation-Date: 2025-06-06 07:18+0000\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Report-Msgid-Bugs-To: YOUR_BUG_REPORT_URL_OR_EMAIL\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: gemini-link-importer.php:52
+msgid "Gemini Link Importer:"
+msgstr ""
+
+#. translators: %s: URL to Link Manager plugin page.
+#: gemini-link-importer.php:56
+msgid "The \"Link Manager\" functionality is not enabled on this site. Please enable it (e.g., by activating the <a href=\"%s\" target=\"_blank\" rel=\"noopener noreferrer\">Link Manager plugin</a>) to use this plugin."
+msgstr ""
+
+#: inc/class-admin-page.php:24, inc/class-admin-page.php:25, inc/class-admin-page.php:61, inc/class-admin-page.php:108
+msgid "Import Links"
+msgstr ""
+
+#: inc/class-admin-page.php:59
+msgid "Please enter links to import."
+msgstr ""
+
+#: inc/class-admin-page.php:60
+msgid "Importing links..."
+msgstr ""
+
+#: inc/class-admin-page.php:62
+msgid "Successfully imported %d links."
+msgstr ""
+
+#: inc/class-admin-page.php:63
+msgid "Import completed with some issues. Successfully imported %d links, %d failed, and %d new categories were created."
+msgstr ""
+
+#: inc/class-admin-page.php:64
+msgid "Failed to import any links. %d links had issues."
+msgstr ""
+
+#: inc/class-admin-page.php:65
+msgid "No valid links found to process."
+msgstr ""
+
+#: inc/class-admin-page.php:66
+msgid "Successfully Imported (%d):"
+msgstr ""
+
+#: inc/class-admin-page.php:67
+msgid "Failed to Import (%d):"
+msgstr ""
+
+#: inc/class-admin-page.php:68
+msgid "New Categories Created (%d):"
+msgstr ""
+
+#: inc/class-admin-page.php:77
+msgid "Gemini Link Importer"
+msgstr ""
+
+#: inc/class-admin-page.php:83
+msgid "Paste your links below, one per line. Format: URL, Title, Category (fields can be optionally quoted)"
+msgstr ""
+
+#: inc/class-admin-page.php:86
+msgid "Examples:"
+msgstr ""
+
+#: inc/class-admin-page.php:99
+msgid "Paste your links here..."
+msgstr ""
+
+#: inc/class-link-importer.php:26
+msgid "You do not have permission to import links."
+msgstr ""
+
+#: inc/class-link-importer.php:31
+msgid "No links provided for import."
+msgstr ""
+
+#: inc/class-link-importer.php:37
+msgid "No valid lines found to process."
+msgstr ""
+
+#: inc/class-link-importer.php:55
+msgid "Uncategorized"
+msgstr ""
+
+#: inc/class-link-importer.php:61
+msgid "Invalid URL format."
+msgstr ""
+
+#. translators: %1$s: category name, %2$s: error message
+#: inc/class-link-importer.php:77
+msgid "Error creating category \"%1$s\": %2$s"
+msgstr ""
+
+#. translators: %s: category name
+#: inc/class-link-importer.php:93
+msgid "Could not determine category ID for \"%s\"."
+msgstr ""
+
+#. translators: %s: category name
+#: inc/class-link-importer.php:105
+msgid "Duplicate link found in category \"%s\"."
+msgstr ""
+
+#: inc/class-link-importer.php:123
+msgid "Failed to insert link (unknown reason)."
+msgstr ""
+
+#. translators: %s: WordPress error message
+#: inc/class-link-importer.php:127
+msgid "Error inserting link: %s"
+msgstr ""

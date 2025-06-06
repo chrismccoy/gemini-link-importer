@@ -1,0 +1,29 @@
+{
+  "name": "gemini-link-importer",
+  "version": "1.0.0",
+  "description": "WordPress plugin to import links into the Link Manager.",
+  "main": "gemini-link-importer.php",
+  "scripts": {
+    "build": "gulp build",
+    "watch": "gulp watch",
+    "test": "composer run-script test",
+    "phpcs": "composer run-script lint",
+    "phpcbf": "composer run-script format",
+    "makepot": "gulp makepot",
+    "compilemo": "gulp po2mo",
+    "uglify": "gulp uglify"
+  },
+  "author": "Google",
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "gettext-parser": "^8.0.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-wp-pot": "^2.5.0",
+    "sass": "1.62.1",
+    "through2": "^4.0.2"
+  }
+}
